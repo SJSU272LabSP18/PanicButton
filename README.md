@@ -1,21 +1,17 @@
 # cmpe272-spring18
 
 
-## IoT idea: Cheap ForgetMeNot LCD screen with face recognition
+## Panic button
 
-Basically a device hangs on your front door or garage. Whenever you are closeby the camera recognizes your face and yells at you don’t forget to bring the key.
+A device with panic button, speaker and camera. Basically, the device connect to your mobile phone via bluetooth. When pushing the button once, the device sends a bluetooth signal to the mobile phone. After receiving the signal the mobile phone application will inform our location to other people such as family and friends. Pushing it twice the speaker will start to operate to inform people around you that you are in danger and also the camera will capture the places around and automatically send the photos to your family and friends.
 
-Personally I have many times forgotten to bring keys/phone/wallet/trash bag/misc. Stuff when leaving home. And sometimes I have to drive all the way back to grab it.
 
-* Why create this when we have a reminder app on our phones:
-This is for a niche scenario where you enters/leaves your home.
-You don’t need to do anything to see the reminder, which is important because you might as well forget to bring your phone
+## Opinion Mining with Node-RED
 
-* Why it’s better than a piece of sticky note:
-It’s bigger and it changes brightness/color when you approaches, which brings up your awareness, for sticky note you will just as well ignore it like anything else around your door entrance.
-You can update through your phone, so that you don’t need to walk downstairs to write with a sharpie.
-It supports multiple person and looks cool!
 
+## Motion sensing for library booking system
+
+Adding Motion sensing to the current library booking system: The current library booking system limits booking the discussion rooms to 1 booking per day per id. This limitation was implemented because earlier people used to book the rooms for hours together and not use them. Adding a device which could detect if the room is currently occupied or not will make the availability chart real time. Users then see the live availability and book the rooms for use. If the users fail to occupy the booked room in a window of x minutes the booking is automatically cancelled and room is released back into the pool of available rooms.
 
 ## Text Book Sharing App
 
@@ -29,20 +25,16 @@ On clicking search we can show google map with pins of books in certain radius. 
 * Users can also add featured contents like previous years papers (of CMPE272 etc) and notes. If we have bandwidth we can integrate braintree / stripe API for payments. Idea is deceptively simple as a lot of work will go in implementation, it depends on us how we define its scope.
 
 
-## Motion sensing for library booking system
+## IoT idea: Cheap ForgetMeNot LCD screen with face recognition
 
-Adding Motion sensing to the current library booking system: The current library booking system limits booking the discussion rooms to 1 booking per day per id. This limitation was implemented because earlier people used to book the rooms for hours together and not use them. Adding a device which could detect if the room is currently occupied or not will make the availability chart real time. Users then see the live availability and book the rooms for use. If the users fail to occupy the booked room in a window of x minutes the booking is automatically cancelled and room is released back into the pool of available rooms.
+Basically a device hangs on your front door or garage. Whenever you are closeby the camera recognizes your face and yells at you don’t forget to bring the key.
+
+* Why create this when we have a reminder app on our phones:
+This is for a niche scenario where you enters/leaves your home.
+You don’t need to do anything to see the reminder, which is important because you might as well forget to bring your phone
 
 
 ## Blockchain for classifieds
 
 Applying blockchain to local classifieds and enable trusted transactions: The current classifieds system is vulnerable to a lot of frauds 
 
-
-
-## Panic button
-
-A device with panic button, speaker and camera. Basically, the device connect to your mobile phone via bluetooth. When pushing the button once, the device sends a bluetooth signal to the mobile phone. After receiving the signal the mobile phone application will inform our location to other people such as family and friends. Pushing it twice the speaker will start to operate to inform people around you that you are in danger and also the camera will capture the places around and automatically send the photos to your family and friends.
-
-
-## Opinion Mining with Node-RED
