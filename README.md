@@ -8,15 +8,34 @@ Nrupa Chitley
 Rachit Choksni
 Watcharit Maharu Tainont
 
-##
 ## Panic button
 
-A device with panic button, speaker and camera.
+A portable panic button with phone app.
 
-Basically, the device connect to your mobile phone via bluetooth. When pushing the button once, the device pings your mobile phone. After receiving the signal your phone will inform our location to other people such as family and friends. Pushing it twice the speaker will start to operate to inform people around you that you are in danger and also the camera will capture the places around and automatically send the photos to your family and friends.
+When press once:
+1. notifies your friend(s) via text of a preset text message. location share once.
 
+When press twice:
+2. starts alarming, text friends with a different preset message, continue location sharing
 
-## Motion sensing for library booking system
+When press three or more times and hold for longer than 2 seconds:
+3. dials 911 on the phone, start real time location share with friend(s).
+
+Tech stack:
+1. a small pcb board
+2. button
+3. speaker
+4. bluetooth/wifi
+5. android phone app
+6. ...
+
+The deliverable is:
+1. a portable button device that's connected to phone with bluetooth or wifi
+2. a phone app that does location streaming, text/phone, and user data customization. 
+
+## Discarded ideas:
+
+### Motion sensing for library booking system
 
 Adding Motion sensing to the current library booking system for real time monitoring
 
@@ -24,7 +43,7 @@ If the users fail to occupy the booked room in a window of x minutes the booking
 
 The current library booking system limits booking the discussion rooms to 1 booking per day per id. This limitation was implemented because earlier people used to book the rooms for hours together and not use them. Adding a device which could detect if the room is currently occupied or not will make the availability chart real time. Users then see the live availability and book the rooms for use.
 
-## Text Book Sharing App
+### Text Book Sharing App
 
 Web app to share textbooks based on geographic locations
 
