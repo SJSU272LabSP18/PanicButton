@@ -12,26 +12,26 @@ Watcharit Maharu Tainont
 
 A portable panic button with phone app.
 
-When press once:
-1. notifies your friend(s) via text of a preset text message. location share once.
+### When press once:
+* notifies your friend(s) via text of a preset text message. location share once.
 
-When press twice:
-2. starts alarming, text friends with a different preset message, continue location sharing
+### When press twice:
+* starts alarming, text friends with a different preset message, continue location sharing
 
-When press three or more times and hold for longer than 2 seconds:
-3. dials 911 on the phone, start real time location share with friend(s).
+### When press three or more times and hold for longer than 2 seconds:
+* dials 911 on the phone, start real time location share with friend(s).
 
 Tech stack:
-1. a small pcb board
-2. button
-3. speaker
-4. bluetooth/wifi
-5. android phone app
-6. ...
+* a small pcb board
+* button
+* speaker
+* bluetooth/wifi
+* android phone app
+* ...
 
-The deliverable is:
-1. a portable button device that's connected to phone with bluetooth or wifi
-2. a phone app that does location streaming, text/phone, and user data customization. 
+### Deliverable
+*  a portable button device that's connected to phone with bluetooth or wifi
+*  a phone app that does location streaming, text/phone, and user data customization. 
 
 ## Discarded ideas:
 
