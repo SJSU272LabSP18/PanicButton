@@ -35,5 +35,5 @@ On clicking search we can show google map with pins of books in certain radius. 
 * Cloud 
 * Google Maps integration(for nearby-books feature)
 * Push notifications (GCM) 
-* Users can also add featured contents like previous years papers (of CMPE272 etc) and notes. If we have bandwidth we can integrate braintree / stripe API for payments. Idea is deceptively simple as a lot of work will go in implementation, it depends on us how we define its scope.
+* Users can also add featured contents like sharing notes. If we have bandwidth we can integrate braintree / stripe API for payments. Idea is deceptively simple as a lot of work will go in implementation, it depends on us how we define its scope.
 
