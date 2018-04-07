@@ -1,0 +1,4 @@
+---
+applications:
+- name: panic-button-flask
+  memory: 1024M
