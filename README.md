@@ -10,7 +10,7 @@ Watcharit Maharu Tainont
 
 ## Panic button
 
-A portable panic button with phone app.
+A weareable panic button + phone app + data analytics suite.
 
 ### When press once:
 * notifies your friend(s) via text of a preset text message. location share once.
@@ -22,16 +22,15 @@ A portable panic button with phone app.
 * dials 911 on the phone, start real time location share with friend(s).
 
 Tech stack:
-* a small pcb board
-* button
-* speaker
-* bluetooth/wifi
-* android phone app
-* ...
+Programmable circuit board
+BLE module
+Data Analytics App
+Android App
 
 ### Deliverable
-*  a portable button device that's connected to phone with bluetooth or wifi
-*  a phone app that does location streaming, text/phone, and user data customization. 
+* a portable button device that's connected to phone with bluetooth or wifi
+* a phone app that does location streaming, text/phone, and user data customization. 
+* a data analytics app that shows trends and analysis of data gathered from the device
 
 EndPoints:
 1. Number of Incidents per city: https://nrupatest1.mybluemix.net/1
