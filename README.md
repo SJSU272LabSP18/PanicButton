@@ -33,8 +33,6 @@ Android App
 * a data analytics app that shows trends and analysis of data gathered from the device
 
 EndPoints:
-1. Number of Incidents per city: https://nrupatest1.mybluemix.net/1
-2. Number of Incidents per month aggregated by city: https://nrupatest1.mybluemix.net/2
-3. Number of Incidents per city per severity: https://nrupatest1.mybluemix.net/3
-4. Heat map: https://nrupatest1.mybluemix.net/map
-5. Create new incidents: https://nrupatest1.mybluemix.net/log?lat=<LATITUDE>&long=<LONGITITUDE>&sev=<SEVERITY>
+1. Analytic Dashboard: https://nrupatest1.mybluemix.net/analytics
+2. Heat map: https://nrupatest1.mybluemix.net/map
+3. Create new incidents: https://nrupatest1.mybluemix.net/log?lat=<LATITUDE>&long=<LONGITITUDE>&sev=<SEVERITY>

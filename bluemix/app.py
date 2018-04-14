@@ -1,20 +1,16 @@
 from datetime import datetime
-from flask import Flask
 import googlemaps
 from flask import Response
 from flask import jsonify
 from flask import request, render_template
 from flaskext.mysql import MySQL
-from flask import Markup
-
-import plotter
 
 # from flask.ext.mysql import MySQL
 
 """Cloud Foundry test"""
 from flask import Flask
 import os
-
+import plotter
 app = Flask(__name__)
 app.logger.disabled = False
 
@@ -48,34 +44,28 @@ def selectAllQuery():
         app.logger.error("Error Log: %s", e)
         return "NOT OK"
 
-@app.route("/1", methods=["GET"])
+@app.route("/analytics", methods=["GET"])
 def bar():
-    labels = []
-    values = []
-    for data in bar1Query():
-        labels.append(data[0])
-        values.append(data[1])
-    return render_template('barchart.html', values=values, labels=labels)
+    labelsbar = []
+    valuesbar = []
+    for data in lineQuery():
+        labelsbar.append(data[0])
+        valuesbar.append(data[1])
 
-@app.route("/2", methods=["GET"])
-def pie():
     labels = []
     values = []
     colorpallet = []
     for data in pieQuery():
         values.append(data[0])
         labels.append(data[1])
-    colors = ["#FF8000", "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA", "#ABCDEF", "#DDDDDD", "#ABCABC", "#FF4000", "#BF00FF", "#00FFFF", "#FFC0CB"]
+    colors = ["#FF8000", "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA", "#ABCDEF", "#DDDDDD", "#ABCABC", "#FF4000",
+              "#BF00FF", "#00FFFF", "#FFC0CB"]
     for i in range(0, len(values)):
         colorpallet.append(colors[i])
 
-    return render_template('piechart.html', set=zip(values, labels, colorpallet))
-
-@app.route("/3", methods=["GET"])
-def stackedbar():
     labels = []
     data = {}
-    for d in bar2Query():
+    for d in barQuery():
         city = d[0]
         if city not in data:
             data[city] = {}
@@ -127,11 +117,12 @@ def stackedbar():
                 flag = 1
         if flag == 0:
             data4.append(0)
-    return render_template('stackedbarchart.html', labels=labels, data1=data1, data2=data2, data3=data3, data4=data4)
+
+    return render_template('chart.html', valuesbar=valuesbar, labelsbar=labelsbar, set=zip(valuesbar, labelsbar, colorpallet), labels=labels, data1=data1, data2=data2, data3=data3, data4=data4)
 
 # Number of calls by city
 # @app.route("/query1", methods=["GET"])
-def bar1Query():
+def lineQuery():
     try:
         db = mysql.connect()
         cursor = db.cursor()
@@ -161,7 +152,7 @@ def pieQuery():
 
 # Number of calls by severity and city
 # @app.route("/query3", methods=["GET"])
-def bar2Query():
+def barQuery():
     try:
         db = mysql.connect()
         cursor = db.cursor()
@@ -174,32 +165,39 @@ def bar2Query():
         app.logger.error("Error Log: %s", e)
         return "NOT OK"
 
+def getAddressDetails(locationdictionary):
+    for address_components in locationdictionary['address_components']:
+        for component in address_components["types"]:
+            if component == "locality":
+                city = address_components["long_name"]
+            if component == "administrative_area_level_1":
+                state = address_components["short_name"]
+            if component == "country":
+                country = address_components["short_name"]
+    return (city,country,state)
+
+
 # @app.route("/geo", methods=["GET"])
 def reverseGeocode(latitude, longitude):
     gmaps = googlemaps.Client(key='AIzaSyBy3l8CsBAn4yUrS_pUddS6iqzy0YOU6zw')
     reverse_geocode_result = gmaps.reverse_geocode((latitude, longitude))
-    return (reverse_geocode_result[0]["formatted_address"])
+    return reverse_geocode_result[0]
 
 
 def db(latitude, longitude, severity):
     locationdictionary = reverseGeocode(latitude, longitude)
-    addArray = locationdictionary.split(',')
-    address = addArray[0]
-    cityName = addArray[1].strip(' ')
-    stateArray = addArray[2].split(' ')
-    state = stateArray[1]
-    countryName = addArray[3].strip(' ')
+    cityName, countryName, state = getAddressDetails(locationdictionary)
     datetime2 = datetime.now()
     d = mysql.connect()
     cursor = d.cursor()
-    query = "INSERT INTO panicbuttontable (severity,incidentDate,city,country,latitude,longitude,state,address) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
+    query = "INSERT INTO panicbuttontable (severity,incidentDate,city,country,latitude,longitude,state) VALUES (%s,%s,%s,%s,%s,%s,%s)"
     try:
         # Execute the SQL command
         cursor.execute(query,
-                       (severity, datetime2.strftime('%Y-%m-%d %H:%M:%S'), cityName, countryName, latitude, longitude, state, address))
+                       (severity, datetime2.strftime('%Y-%m-%d %H:%M:%S'), cityName, countryName, latitude, longitude, state))
         d.commit()
         # Commit your changes in the database
-        print("inserted", severity, datetime2.strftime('%Y-%m-%d %H:%M:%S'), cityName, countryName, latitude, longitude, state, address)
+        print("inserted", severity, datetime2.strftime('%Y-%m-%d %H:%M:%S'), cityName, countryName, latitude, longitude, state)
     except Exception as e:
         # Rollback in case there is any error
         print(e)
