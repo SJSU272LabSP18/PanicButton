@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Panic Button </title>
+	<!-- import plugin script -->
+	<script src='static/Chart.min.js'></script>
+	<style>
+		table {
+    		border-collapse: collapse;
+    		width: 100%;
+    		align-items: center;
+    		margin-top: 5.5%;
+		}
+
+		td, th {
+    		border: 1px solid #dddddd;
+    		text-align: center;
+    		padding: 8px;
+		}
+
+		tr:nth-child(odd) {
+    		background-color: #dddddd;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Number of Incidents per City</th>
+			<th>Number of Incidents per Month</th>
+			<th>Number of Incidents by Severity and City</th>
+		</tr>
+		<tr>
+			<td>
+				<div>
+					<canvas id="barchart" height="400"></canvas>
+					<script>
+            			var barData = {
+            			labels : [{% for item in labelsbar %} "{{item}}", {% endfor %}],
+            			datasets : [
+                    	{
+                        	fillColor: "rgba(128,0,225,0.2)",
+                        	strokeColor: "rgba(128,0,225,1)",
+                        	pointColor: "rgba(128,0,225,1)",
+                        	pointStrokeColor: "#fff",
+                        	pointHighlightFill: "#fff",
+                        	pointHighlightStroke: "rgba(128,0,225,1)",
+                        	bezierCurve : false,
+                        	data : [{% for item in valuesbar %} {{item}}, {% endfor %}]}]
+                    	}
+
+			            Chart.defaults.global.animationSteps = 50;
+            			Chart.defaults.global.tooltipYPadding = 16;
+            			Chart.defaults.global.tooltipCornerRadius = 0;
+            			Chart.defaults.global.tooltipTitleFontStyle = "normal";
+            			Chart.defaults.global.tooltipFillColor = "rgba(0,0,0,0.8)";
+            			Chart.defaults.global.animationEasing = "easeOutBounce";
+            			Chart.defaults.global.responsive = false;
+            			Chart.defaults.global.scaleLineColor = "black";
+            			Chart.defaults.global.scaleFontSize = 16;
+
+			            var myLine = document.getElementById("barchart").getContext("2d");
+            			steps = 10
+            			max = 10
+            			window.myLine = new Chart(myLine).Line(barData, {
+                    		scaleOverride: true,
+                    		scaleSteps: steps,
+                    		scaleStepWidth: Math.ceil(max / steps),
+                    		scaleStartValue: 0,
+                    		scaleShowVerticalLines: false,
+                    		scaleShowGridLines : false,
+                    		barShowStroke : true,
+                    		scaleShowLabels: true,
+                    		bezierCurve: false,
+                    	});
+					</script>
+				</div>
+			</td>
+			<td>
+				<div>
+					<canvas id="chart" height="400"></canvas>
+					<script>
+            			var pieData = [
+                        {% for valuesbar,labelsbar,colorpallet in set %}
+                        {
+                                value: {{valuesbar}},
+                                label: "{{labelsbar}}",
+                                color : "{{colorpallet}}"
+                        },
+                        {% endfor %}
+              			];
+
+            			var myPie = document.getElementById("chart").getContext("2d");
+            			window.myPie = new Chart(myPie).Pie(pieData)
+					</script>
+				</div>
+			</td>
+			<td>
+				<div>
+					<script src='static/Chart.bundle.min.js'></script>
+					<canvas id="stackedchart" height="300"></canvas>
+					<script>
+                    		var barChartData = {
+			        		labels: [{% for item in labels %}
+                                	"{{item}}",
+                          			{% endfor %}],
+							datasets: [{
+			    				type: 'bar',
+								label: 'Severity 1',
+								backgroundColor: "rgba(255, 255, 0, 0.2)",
+								borderColor: "rgba(255,255,0,1)",
+								borderWidth: 1,
+								data: [{% for item in data1 %}
+                            			{{item}},
+                        			{% endfor %}]
+								}, {
+			    				type: 'bar',
+								label: 'Severity 2',
+								backgroundColor: "rgba(255, 140, 0, 0.2)",
+								borderColor: "rgba(255,140,0,1)",
+								borderWidth: 1,
+								data: [{% for item in data2 %}
+                            			{{item}},
+                            			{% endfor %}]
+								}, {
+			    				type: 'bar',
+								label: 'Severity 3',
+								backgroundColor: "rgba(255, 0, 0, 0.2)",
+								borderColor: "rgba(255,0,0,1)",
+								borderWidth: 1,
+								data: [{% for item in data3 %}
+                            				{{item}},
+                          				{% endfor %}]
+								}, {
+			    				type: 'bar',
+			    				label: 'Severity 4',
+								backgroundColor: "rgba(128, 0, 0, 0.2)",
+								borderColor: "rgba(128,0,0,1)",
+								borderWidth: 1,
+								data: [{% for item in data4 %}
+                            			{{item}},
+                          			{% endfor %}]
+								}]
+							}
+
+		    				var myStackedBar = document.getElementById("stackedchart").getContext("2d");
+		    				window.myStackedBar = new Chart(myStackedBar, {
+			    			type: 'bar',
+			    			data: barChartData,
+			    			options: {
+				    			title: {
+					    			display: false,
+					    			text: 'Number of Incidents per City'
+				    			},
+				    			tooltips: {
+					    			mode: 'index',
+					    			intersect: false
+				    			},
+				    			responsive: true,
+				    			scales: {
+					    			xAxes: [{
+						    			stacked: true,
+					    			}],
+					    			yAxes: [{
+						    			stacked: true
+					    			}]
+				    			}
+			    			}
+		    			});
+
+				</script>
+			</div>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>
