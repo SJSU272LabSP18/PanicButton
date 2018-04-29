@@ -22,7 +22,6 @@ app.config['MYSQL_DATABASE_HOST'] = 'sl-us-south-1-portal.21.dblayer.com'
 app.config['MYSQL_DATABASE_PORT'] = 38220
 mysql.init_app(app)
 
-points_list = []
 mymap = plotter.GoogleMapPlotter(39.8283, -98.5795, 5)
 
 if os.getenv("VCAP_APP_PORT"):
@@ -45,22 +44,22 @@ def selectAllQuery():
         return "NOT OK"
 
 @app.route("/analytics", methods=["GET"])
-def bar():
-    labelsbar = []
-    valuesbar = []
+def query():
+    labelsline = []
+    valuesline = []
     for data in lineQuery():
-        labelsbar.append(data[0])
-        valuesbar.append(data[1])
+        labelsline.append(data[0])
+        valuesline.append(data[1])
 
-    labels = []
-    values = []
+    labelspie = []
+    valuespie = []
     colorpallet = []
     for data in pieQuery():
-        values.append(data[0])
-        labels.append(data[1])
+        valuespie.append(data[0])
+        labelspie.append(data[1])
     colors = ["#FF8000", "#F7464A", "#46BFBD", "#FDB45C", "#FEDCBA", "#ABCDEF", "#DDDDDD", "#ABCABC", "#FF4000",
               "#BF00FF", "#00FFFF", "#FFC0CB"]
-    for i in range(0, len(values)):
+    for i in range(0, len(valuespie)):
         colorpallet.append(colors[i])
 
     labels = []
@@ -118,7 +117,7 @@ def bar():
         if flag == 0:
             data4.append(0)
 
-    return render_template('chart.html', valuesbar=valuesbar, labelsbar=labelsbar, set=zip(valuesbar, labelsbar, colorpallet), labels=labels, data1=data1, data2=data2, data3=data3, data4=data4)
+    return render_template('chart.html', valuesline=valuesline, labelsline=labelsline, set=zip(valuespie, labelspie, colorpallet), labels=labels, data1=data1, data2=data2, data3=data3, data4=data4)
 
 # Number of calls by city
 # @app.route("/query1", methods=["GET"])
@@ -234,8 +233,6 @@ def insert():
         return bad_request(sev)
 
     db(lat, lng, sev)
-
-    points_list.append([lat, lng, sev])
 
     return Response("OK", status=200)
 

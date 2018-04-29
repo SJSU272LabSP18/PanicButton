@@ -46,10 +46,10 @@
 		<tr>
 			<td>
 				<div>
-					<canvas id="barchart" height="400"></canvas>
+					<canvas id="linechart" height="400"></canvas>
 					<script>
-            			var barData = {
-            			labels : [{% for item in labelsbar %} "{{item}}", {% endfor %}],
+            			var lineData = {
+            			labels : [{% for item in labelsline %} "{{item}}", {% endfor %}],
             			datasets : [
                     	{
                         	fillColor: "rgba(128,0,225,0.2)",
@@ -59,7 +59,7 @@
                         	pointHighlightFill: "#fff",
                         	pointHighlightStroke: "rgba(128,0,225,1)",
                         	bezierCurve : false,
-                        	data : [{% for item in valuesbar %} {{item}}, {% endfor %}]}]
+                        	data : [{% for item in valuesline %} {{item}}, {% endfor %}]}]
                     	}
 
 			            Chart.defaults.global.animationSteps = 50;
@@ -70,12 +70,11 @@
             			Chart.defaults.global.animationEasing = "easeOutBounce";
             			Chart.defaults.global.responsive = false;
             			Chart.defaults.global.scaleLineColor = "black";
-            			Chart.defaults.global.scaleFontSize = 16;
-
-			            var myLine = document.getElementById("barchart").getContext("2d");
+            			Chart.defaults.global.scaleFontSize = 14;
+			            var myLine = document.getElementById("linechart").getContext("2d");
             			steps = 10
-            			max = 10
-            			window.myLine = new Chart(myLine).Line(barData, {
+            			max = 50
+            			window.myLine = new Chart(myLine).Line(lineData, {
                     		scaleOverride: true,
                     		scaleSteps: steps,
                     		scaleStepWidth: Math.ceil(max / steps),
@@ -94,10 +93,10 @@
 					<canvas id="chart" height="400"></canvas>
 					<script>
             			var pieData = [
-                        {% for valuesbar,labelsbar,colorpallet in set %}
+                        {% for valuespie,labelspie,colorpallet in set %}
                         {
-                                value: {{valuesbar}},
-                                label: "{{labelsbar}}",
+                                value: {{valuespie}},
+                                label: "{{labelspie}}",
                                 color : "{{colorpallet}}"
                         },
                         {% endfor %}
