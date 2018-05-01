@@ -226,7 +226,7 @@ public class Bluetooth extends Service {
         @Override
         public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
             super.onCharacteristicChanged(gatt, characteristic);
-            String signal = new String(characteristic.getValue());
+            String signal = Integer.toString(characteristic.getValue()[0]);
             Log.i("signal", signal);
             processor.process(signal);
         }
