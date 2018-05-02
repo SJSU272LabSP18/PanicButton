@@ -98,6 +98,7 @@ public class LocationUpdater {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         address = null;
+                        Log.e(TAG, "error: " + error.getMessage());
                     }
                 });
 
