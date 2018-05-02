@@ -19,7 +19,7 @@ public class SignalProcessor implements Processor {
 
     private static final String TAG = "PROCESSOR";
     private static final String EMERGENCY_NUMBER = "6692219715";
-    private static final String INTRODUCTION_MESSAGE = "Sent from Panic Button application\n";
+    private static final String MESSAGE_FOOTER = "\nSent from Panic Button application";
     private static final String SIGNAL_1 = "1";
     private static final String SIGNAL_2 = "2";
     private static final String SIGNAL_3 = "3";
@@ -46,7 +46,7 @@ public class SignalProcessor implements Processor {
     public void process(String signal) {
         Log.i(TAG, signal);
         severity = signal;
-        String message = INTRODUCTION_MESSAGE + getSeverityMessage() + LocationUpdater.getAddress() == null? null:LocationUpdater.getAddress() + "\n" + LocationUpdater.getMapsURL();
+        String message = getMessage();
         switch (severity) {
             case SIGNAL_1: {
                 if (contactManager.hasFavoriteContact()) {
@@ -69,6 +69,13 @@ public class SignalProcessor implements Processor {
                 break;
             }
         }
+    }
+
+    private String getMessage() {
+        String message = getSeverityMessage();
+        message += LocationUpdater.getAddress() == null? null:LocationUpdater.getAddress() + "\n" + LocationUpdater.getMapsURL();
+        message += MESSAGE_FOOTER;
+        return message;
     }
 
     @SuppressLint("MissingPermission")
