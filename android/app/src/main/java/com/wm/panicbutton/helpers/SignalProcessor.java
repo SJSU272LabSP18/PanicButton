@@ -46,7 +46,7 @@ public class SignalProcessor implements Processor {
     public void process(String signal) {
         Log.i(TAG, signal);
         severity = signal;
-        String message = getMessage();
+        String message = LocationUpdater.getAddress() == null? null:getSeverityMessage() + LocationUpdater.getAddress() + "\n" + MESSAGE_FOOTER + " " + LocationUpdater.getMapsURL();
         switch (severity) {
             case SIGNAL_1: {
                 if (contactManager.hasFavoriteContact()) {
@@ -69,13 +69,6 @@ public class SignalProcessor implements Processor {
                 break;
             }
         }
-    }
-
-    private String getMessage() {
-        String message = getSeverityMessage();
-        message += LocationUpdater.getAddress() == null? null:LocationUpdater.getAddress() + "\n" + LocationUpdater.getMapsURL();
-        message += MESSAGE_FOOTER;
-        return message;
     }
 
     @SuppressLint("MissingPermission")
