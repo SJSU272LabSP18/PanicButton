@@ -1,25 +1,30 @@
 # cmpe272-spring18
 
-![alt text][logo]
-[logo]: https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/octocat.png "Logo Title Text 2"
+![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/logo.png "logo")
 
-![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/octocat.png "Logo Title Text 1")
-
-[[https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/octocat.png]]
-
-Panic Button ![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/octocat.png "Logo Title Text 1")
+## Panic Button ![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/icon.png "icon")
 
 ## We Fly High
 
 ## Team
-Haoji Liu
-Nrupa Chitley
-Rachit Choksni
-Watcharit Maharu Tainont
+* Haoji Liu
+* Nrupa Chitley
+* Rachit Choksni
+* Watcharit Maharu Tainont
 
-## Panic button
+---
+
+## What
 
 A weareable panic button + phone app + data analytics suite.
+
+---
+
+## Why
+
+---
+
+## How
 
 ### When press once:
 * notifies your friend(s) via text of a preset text message. location share once.
