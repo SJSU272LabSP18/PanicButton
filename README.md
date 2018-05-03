@@ -2,23 +2,29 @@
 
 ![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/logo.png "logo")
 
-## Panic Button ![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/icon.png "icon")
-
 ## We Fly High
 
-## Team
-* Haoji Liu
-* Nrupa Chitley
-* Rachit Choksni
-* Watcharit Maharu Tainont
+---
+
+## Panic Button ![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/icon.png "icon")
+
+## Highlights:
+
+* Size - a pack of gum
+* Battery life - 1 month with daily usage
+* Detachable
 
 ---
 
 
 ## What
 
+![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/device_sketch.png "device_sketch")
+
 
 A weareable panic button + phone app + data analytics suite.
+
+### Retail Price: $29.99
 
 ---
 
@@ -52,3 +58,11 @@ EndPoints:
 1. Analytic Dashboard: https://nrupatest1.mybluemix.net/analytics
 2. Heat map: https://nrupatest1.mybluemix.net/map
 3. Create new incidents: https://nrupatest1.mybluemix.net/log?lat=<LATITUDE>&long=<LONGITITUDE>&sev=<SEVERITY>
+
+---
+
+## Team
+* Haoji Liu
+* Nrupa Chitley
+* Rachit Choksni
+* Watcharit Maharu Tainont
