@@ -1,8 +1,17 @@
 # cmpe272-spring18
 
-## Team Name: We Fly High
+![alt text][logo]
+[logo]: https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/octocat.png "Logo Title Text 2"
 
-## Student Names
+![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/octocat.png "Logo Title Text 1")
+
+[[https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/octocat.png]]
+
+Panic Button ![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/octocat.png "Logo Title Text 1")
+
+## We Fly High
+
+## Team
 Haoji Liu
 Nrupa Chitley
 Rachit Choksni
@@ -29,7 +38,7 @@ Android App
 
 ### Deliverable
 * a portable button device that's connected to phone with bluetooth or wifi
-* a phone app that does location streaming, text/phone, and user data customization. 
+* a phone app that does location streaming, text/phone, and user data customization.
 * a data analytics app that shows trends and analysis of data gathered from the device
 
 EndPoints:
