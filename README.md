@@ -1,16 +1,30 @@
 # cmpe272-spring18
 
-## Team Name: We Fly High
+![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/logo.png "logo")
 
-## Student Names
-Haoji Liu
-Nrupa Chitley
-Rachit Choksni
-Watcharit Maharu Tainont
+## Panic Button ![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/icon.png "icon")
 
-## Panic button
+## We Fly High
+
+## Team
+* Haoji Liu
+* Nrupa Chitley
+* Rachit Choksni
+* Watcharit Maharu Tainont
+
+---
+
+## What
 
 A weareable panic button + phone app + data analytics suite.
+
+---
+
+## Why
+
+---
+
+## How
 
 ### When press once:
 * notifies your friend(s) via text of a preset text message. location share once.
@@ -29,7 +43,7 @@ Android App
 
 ### Deliverable
 * a portable button device that's connected to phone with bluetooth or wifi
-* a phone app that does location streaming, text/phone, and user data customization. 
+* a phone app that does location streaming, text/phone, and user data customization.
 * a data analytics app that shows trends and analysis of data gathered from the device
 
 EndPoints:
