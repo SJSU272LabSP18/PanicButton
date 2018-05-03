@@ -16,7 +16,6 @@
 
 ---
 
-
 ## What
 
 ![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/device_sketch.png "device_sketch")
