@@ -53,10 +53,40 @@ Android App
 * a phone app that does location streaming, text/phone, and user data customization.
 * a data analytics app that shows trends and analysis of data gathered from the device
 
-EndPoints:
+---
+
+## Data Analytics with Bluemix
+
+### Architecture
+
+![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/architecture.png "architecture")
+
+### Technology Used
+
+* Bluemix
+* MySQL Database
+* Python
+* Chart.js
+
+### Analyics Dashboard
+
+![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/dsahboard.png "dashboard")
+
+### Heat Map
+
+1. Complete Map of US:
+
+![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/map2.png "us_map")
+
+2. Zommed-in Map of San Jose:
+
+![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/map1.png "san_jose_map")
+
+### EndPoints
+
 1. Analytic Dashboard: https://nrupatest1.mybluemix.net/analytics
-2. Heat map: https://nrupatest1.mybluemix.net/map
-3. Create new incidents: https://nrupatest1.mybluemix.net/log?lat=<LATITUDE>&long=<LONGITITUDE>&sev=<SEVERITY>
+2. Heat Map: https://nrupatest1.mybluemix.net/map
+3. Log new incident in database: https://nrupatest1.mybluemix.net/log?lat=<LATITUDE>&long=<LONGITITUDE>&sev=<SEVERITY>
 
 ---
 
