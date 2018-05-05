@@ -4,10 +4,8 @@
 
 ---
 
-# Panic Button
-![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/icon.png "icon")
+# Panic Button ![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/icon.png "icon")
 
-# Retail Price: $29.99
 
 ---
 
@@ -16,6 +14,7 @@
 * Size - a pack of gum
 * Battery life - 1 month with daily usage
 * Detachable
+* Retail Price: $29.99
 
 ---
 
