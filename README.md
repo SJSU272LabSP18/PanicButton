@@ -1,6 +1,6 @@
 # cmpe272-spring18
 
-![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/logo.png "logo")
+![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/raw/master/wiki/img/banner.jpg "banner")
 
 ## We Fly High
 
