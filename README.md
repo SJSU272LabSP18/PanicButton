@@ -43,7 +43,13 @@
 
 
 ### Phone App
-TODO: Rachit and Erb
+The android app fires actions based on signals received from the panic button.
+* On launching the app, it scans for panic button device nearby and connects with first available device.
+* App running as a background bluetooth service.
+* Add and favourite contacts using the contact manager.
+* Action: Sending texts with location to contacts.
+* Action: Emergency phone call to 911.
+
 
 ### Data Analytics with Bluemix
 
