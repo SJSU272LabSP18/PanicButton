@@ -45,14 +45,14 @@
 ### Phone App
 The android app fires actions based on signals received from the panic button.
 * On launching the app, it scans for panic button device nearby and connects with first available device.
-![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/App_scanning.jpeg "Scanning" =250x250)
-![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/App_activated.png "Activated" =250x250)
+<img src=https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/App_scanning.jpeg alt="Scanning" width=250 height=250/>
+<img src=https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/App_activated.png alt="Activated" width=250 height=250/>
 * App running as a background bluetooth service.
-![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/App_service.jpeg "Background Service" =250x250)
+<img src=https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/App_service.jpeg alt="Background Service" width=250 height=250/>
 * Add and favourite contacts using the contact manager.
-![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/App_contacts.png "Contacts" =250x250)
+<img src=https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/App_contacts.png alt="Contacts" width=250 height=250/>
 * Action: Sending texts with location to contacts.
-![alt text](https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/App_message.png "Texts" =250x250)
+<img src=https://github.com/SJSU272LabSP18/Project-Team-20/blob/master/wiki/img/App_message.png alt="Texts" width=250 height=250/>
 * Action: Emergency phone call to 911.
 
 
